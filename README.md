@@ -1,25 +1,82 @@
-````markdown
-# Smart Expense Tracker API
+<div align="center">
 
-## Overview
+# 💰 Smart Expense Tracker API
 
-Smart Expense Tracker API is a RESTful web service built using FastAPI to manage personal expenses. The application stores expense data in memory and provides endpoints to add, retrieve, filter, summarize, and delete expenses.
+### FastAPI Backend for Personal Expense Management
 
-## Features
+**A clean RESTful API for recording, filtering, summarizing and managing personal expenses.**
 
-- Add a new expense
-- View all expenses
-- Filter expenses by category
-- Calculate total expenses
-- Calculate total expenses by category
-- Delete an expense
-- Interactive Swagger/OpenAPI documentation
+`Python` • `FastAPI` • `Pydantic` • `Pytest` • `Uvicorn` • `OpenAPI`
+
+</div>
 
 ---
 
-## Project Structure
+## 🚀 Overview
 
+**Smart Expense Tracker API** is a RESTful backend application built with **FastAPI** for managing personal expenses.
+
+The API allows users to add, retrieve, filter, summarize and delete expense records while providing automatically generated **Swagger/OpenAPI documentation** for exploring and testing endpoints.
+
+The project focuses on clean API design, request/response validation, service separation and automated testing.
+
+---
+
+## ✨ Features
+
+➕ **Add Expenses** — Create and store new expense records
+
+📋 **View Expenses** — Retrieve all recorded expenses
+
+🔎 **Category Filtering** — Filter expenses by category
+
+💰 **Expense Summary** — Calculate total spending
+
+📊 **Category Summary** — Calculate spending totals by category
+
+🗑️ **Delete Expenses** — Remove existing expense records
+
+🧪 **Automated Testing** — API tests using Pytest
+
+📖 **Interactive API Documentation** — Swagger UI and ReDoc generated automatically by FastAPI
+
+---
+
+## 🏗️ Architecture
+
+```text
+                Client / API Consumer
+                         │
+                         ▼
+                ┌─────────────────┐
+                │     FastAPI     │
+                │   REST Routes   │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │    Pydantic     │
+                │ Data Validation │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Expense Service │
+                │ Business Logic  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ In-Memory Data  │
+                │     Store       │
+                └─────────────────┘
 ```
+
+---
+
+## 📁 Project Structure
+
+```text
 smart-expense-tracker/
 │
 ├── README.md
@@ -39,81 +96,149 @@ smart-expense-tracker/
 
 ---
 
-## Installation
+## 🛠️ Tech Stack
 
-Clone the repository.
+| Area | Technology |
+|---|---|
+| Programming | Python 3 |
+| API Framework | FastAPI |
+| Data Validation | Pydantic |
+| API Server | Uvicorn |
+| Testing | Pytest |
+| Documentation | Swagger / OpenAPI / ReDoc |
+| Storage | In-memory |
+
+---
+
+## 💻 Run Locally
+
+### 1. Clone the repository
 
 ```bash
-git clone <your-github-repository-url>
-cd smart-expense-tracker
+git clone https://github.com/Adithya200116/Smart-Expense-Tracker.git
+cd Smart-Expense-Tracker
 ```
 
-Create a virtual environment.
-
-Windows:
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
+```
+
+### 3. Activate it on Windows
+
+```bash
 venv\Scripts\activate
 ```
 
-Install dependencies.
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Running the Server
-
-Run the application using:
+### 5. Start the API
 
 ```bash
 uvicorn src.main:app --reload
 ```
 
-The API will be available at:
+The API will run at:
 
-```
+```text
 http://127.0.0.1:8000
-```
-
-Swagger Documentation:
-
-```
-http://127.0.0.1:8000/docs
-```
-
-ReDoc Documentation:
-
-```
-http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-## Running Tests
+## 📖 API Documentation
 
-## Run Tests
+Once the server is running, FastAPI automatically provides interactive API documentation.
+
+### Swagger UI
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### ReDoc
+
+```text
+http://127.0.0.1:8000/redoc
+```
+
+Swagger UI can be used to explore and test the available API endpoints directly from the browser.
+
+---
+
+## 🧪 Testing
+
+Run the automated tests with:
 
 ```bash
 python -m pytest
 ```
 
-## Technologies Used
+The test suite is located inside:
 
-- Python 3
-- FastAPI
-- Pydantic
-- Pytest
-- Uvicorn
+```text
+tests/
+└── test_api.py
+```
 
 ---
 
-## Notes
+## 🔄 API Workflow
 
-- Data is stored in memory.
-- Restarting the server clears all stored expenses.
-- No external database is required.
-````
+```text
+Create Expense
+      │
+      ▼
+Validate Request
+      │
+      ▼
+Store Expense
+      │
+      ├──────────────► View Expenses
+      │
+      ├──────────────► Filter by Category
+      │
+      ├──────────────► Calculate Totals
+      │
+      └──────────────► Delete Expense
+```
+
+---
+
+## 🎯 What This Project Demonstrates
+
+This project demonstrates practical experience with:
+
+- REST API development
+- FastAPI application architecture
+- Pydantic data validation
+- Separation of API and business logic
+- CRUD-style backend operations
+- Automated API testing
+- Swagger/OpenAPI documentation
+- Python backend development
+
+---
+
+## 📝 Current Storage
+
+The application currently uses **in-memory storage**, which keeps the project lightweight and requires no external database.
+
+Because the data is stored in memory, restarting the server clears the stored expense records.
+
+A persistent database can be integrated as a future enhancement.
+
+---
+
+<div align="center">
+
+### 💰 Simple Expenses. Clean APIs. Structured Backend.
+
+**Built by Adithya M Kaushik**
+
+</div>
